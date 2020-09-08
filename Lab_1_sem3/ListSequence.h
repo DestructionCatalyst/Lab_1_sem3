@@ -66,11 +66,11 @@ namespace sequences {
 		{
 			list->InsertAt(item, index);
 		}
-		//TODO rewrite with a sequence iterator
+		//Creates a copy and concatenates {list} to it 
 		Sequence<T>* Concat(Sequence<T>* list) override
 		{
 			ListSequence<T>* bigList = new ListSequence(*this);
-			
+
 			for (int i = 0; i < list->GetLength(); i++) {
 				bigList->Append(list->Get(i));
 			}

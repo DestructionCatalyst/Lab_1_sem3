@@ -56,13 +56,13 @@ namespace sequences {
 				return arr->Get(index);
 			else throw std::out_of_range("Sequence index is out of bounds");
 		}
-		//WARNING slow
+		//Copies the part of the sequence
 		Sequence<T>* GetSubsequence(int startIndex, int endIndex) override
 		{
 			if ((startIndex <= endIndex) && (startIndex >= 0) && (endIndex < curSize)) {
 				ArraySequence<T>* sub = new ArraySequence();
 				for (int i = startIndex; i <= endIndex; i++) {
-					sub->Append(Get(i));
+					sub->Append(T(Get(i)));
 				}
 				return sub;
 			}
@@ -98,7 +98,6 @@ namespace sequences {
 			else if ((index > 0) && (index < curSize)) {
 				ExpandIfNeeded();
 
-				//const_iterator prevIter = begin()
 				for (int i = curSize; i >= index; i--)
 					arr->Set(arr->Get(i - 1), i);
 				arr->Set(item, index);
@@ -112,7 +111,7 @@ namespace sequences {
 			arr->Set(item, index);
 		}
 		
-		//Copies array
+		//Creates a copy and concatenates {list} to it 
 		Sequence<T>* Concat(Sequence<T>* list) override
 		{
 			ArraySequence<T>* bigArr = new ArraySequence(*this);
