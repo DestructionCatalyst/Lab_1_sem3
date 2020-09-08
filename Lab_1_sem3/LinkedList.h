@@ -35,7 +35,7 @@ namespace sequences {
 		{
 			const_iterator itr = *list.begin_();
 			
-			for (; itr != list.end(); ++itr) {
+			for (; itr != *list.end_(); ++itr) {
 				Append(T(*itr));
 			}
 		}
@@ -57,7 +57,7 @@ namespace sequences {
 		{
 			if ((length != 0) && (index >= 0) && (index < length)) {
 				
-				return *itemIterator(index);
+				return **itemIterator_(index);
 			}
 			else
 				throw std::out_of_range("List index is out of bounds");
@@ -67,7 +67,7 @@ namespace sequences {
 		{
 			if ((startIndex <= endIndex) && (startIndex >= 0) && (endIndex < length)) {
 				LinkedList<T>* subList = new LinkedList<T>();
-				const_iterator itr = itemIterator(startIndex);
+				const_iterator itr = *itemIterator_(startIndex);
 
 				for (int i = startIndex; i < endIndex; ++i, ++itr) {
 					subList->Append(T(*itr));
@@ -138,16 +138,16 @@ namespace sequences {
 		{
 			return new const_iterator(head);
 		}
-		const_iterator end() const
+		const_iterator* end_() const
 		{
-			return const_iterator(tail->Next());
+			return new const_iterator(tail->Next());
 		}
-		const_iterator itemIterator(int index) const
+		const_iterator* itemIterator_(int index) const
 		{
-			const_iterator itr = *begin_();
+			const_iterator* itr = begin_();
 
 			for (int i = 0; i < index; i++)
-				++itr;
+				++(*itr);
 
 			return itr;
 		}

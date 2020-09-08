@@ -82,7 +82,7 @@ namespace sequences {
 
 			const_iterator itr = dcast(begin());
 
-			for (; itr != end(); ++itr)
+			for (; itr != dcast(end()); ++itr)
 			{
 				newList->Append(f(*itr));
 			}
@@ -96,7 +96,7 @@ namespace sequences {
 
 			const_iterator itr = dcast(begin());
 
-			for (; itr != end(); ++itr)
+			for (; itr != dcast(end()); ++itr)
 			{
 				cur = *itr;
 				if (f(cur))
@@ -111,7 +111,7 @@ namespace sequences {
 
 			const_iterator itr = dcast(begin());
 
-			for (; itr != end(); ++itr)
+			for (; itr != dcast(end()); ++itr)
 			{
 				funcResult = f(*itr, funcResult);
 			}
@@ -133,13 +133,13 @@ namespace sequences {
 		{
 			return list->begin_();
 		}
-		const_iterator end() const
+		Sequence<T>::const_iterator* end() const override
 		{
-			return list->end();
+			return list->end_();
 		}
-		const_iterator itemIterator(int index) const
+		Sequence<T>::const_iterator* itemIterator(int index) const override
 		{
-			return list->itemIterator(index);
+			return list->itemIterator_(index);
 		}
 	public:
 		iterator begin() 

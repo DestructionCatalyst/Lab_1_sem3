@@ -31,6 +31,8 @@ namespace sequences {
 		virtual T Reduce(std::function<T(T, T)> f, T) const = 0;
 
 		virtual const_iterator* begin() const = 0;
+		virtual const_iterator* end() const = 0;
+		virtual const_iterator* itemIterator(int index) const = 0;
 
 		virtual ~Sequence() {};
 	};
