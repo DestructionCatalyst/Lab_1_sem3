@@ -11,7 +11,10 @@ private:
 	vector<UnitTest> tests{};
 public:
 	TestEnvironment& AddTest(UnitTest testToAdd);
+	void Run(int testIndex);
 	void RunAll();
+public:
+	static void Assert(int expression);
 private:
 	void PrintResults(int testsPassed);
 	

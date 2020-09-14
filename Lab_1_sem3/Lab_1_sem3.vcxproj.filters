@@ -25,6 +25,15 @@
     <Filter Include="Test\Sources">
       <UniqueIdentifier>{2674532d-c48f-4cf2-824e-04c26908015c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SequenceTests">
+      <UniqueIdentifier>{a14f01a4-9618-4499-9be8-be2fae47e31e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SequenceTests\Headers">
+      <UniqueIdentifier>{f2cab357-ca53-45d8-a1f3-bdd64d8f6506}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SequenceTests\Sources">
+      <UniqueIdentifier>{763e0615-9f88-46b6-8964-588c47fdd2aa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DynamicArray.h">
@@ -75,6 +84,12 @@
     <ClInclude Include="UnitTest.h">
       <Filter>Test\Headers</Filter>
     </ClInclude>
+    <ClInclude Include="SequenceAssertions.h">
+      <Filter>SequenceTests</Filter>
+    </ClInclude>
+    <ClInclude Include="ArraySequenceTests.h">
+      <Filter>SequenceTests\Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -88,6 +103,9 @@
     </ClCompile>
     <ClCompile Include="UnitTest.cpp">
       <Filter>Test\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="ArraySequenceTests.cpp">
+      <Filter>SequenceTests\Sources</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

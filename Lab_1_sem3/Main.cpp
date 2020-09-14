@@ -186,17 +186,12 @@ int main() {
 	srand(time(0));
 
 	TestEnvironment env{};
-	
-	RunAllTests();
 
-	 env.AddTest(UnitTest(888, "Array test", testArray))
-		.AddTest(UnitTest(999, "List test", testList))
-		//.AddTest(UnitTest(000, "Test that fails", []() {throw AssertionException();}))
-		 ;
+	InitializeTests(env);
 	
-	 env.RunAll();
+	env.RunAll();
 	
-	testArraySequence();
-	testListSequence();
+	//testArraySequence();
+	//testListSequence();
 }
 

@@ -6,6 +6,11 @@ TestEnvironment& TestEnvironment::AddTest(UnitTest testToAdd)
 	return *this;
 }
 
+void TestEnvironment::Run(int testIndex)
+{
+	tests[testIndex].Run();
+}
+
 void TestEnvironment::RunAll()
 {
 	int passed = 0;
@@ -21,5 +26,12 @@ void TestEnvironment::RunAll()
 
 void TestEnvironment::PrintResults(int testsPassed)
 {
-	std::cout <<  "Testing finished, passed " << testsPassed << " out of " << tests.size() << std::endl;
+	
+	std::cout << std::endl << "Testing finished, passed " << testsPassed << " out of " << tests.size() << std::endl;
+}
+
+void TestEnvironment::Assert(int expression)
+{
+	if (!expression)
+		throw AssertionException();
 }

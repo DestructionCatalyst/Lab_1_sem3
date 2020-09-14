@@ -3,49 +3,6 @@
 using namespace sequences;
 using namespace sequences::iterators;
 
-template<class T>
-void AssertSequenceEquals(Sequence<T>* expected, Sequence<T>* actual) 
-{
-	if (expected == actual)
-		return;
-
-	assert((expected->GetLength()) == (actual->GetLength()));
-	
-	SequenceIterator<T>* expectedIter = expected->begin();
-	SequenceIterator<T>* actualIter = actual->begin();
-
-	for (; (*expectedIter != *expected->end()) && (*actualIter != *actual->end());
-			++(*expectedIter), ++(*actualIter)) {
-		assert((**expectedIter) == (**actualIter));
-	}
-		
-}
-
-template<class T>
-void AssertSequenceEquals(std::initializer_list<T> expected, Sequence<T>* actual)
-{
-	assert((expected.size()) == (actual->GetLength()));
-
-	auto expectedIter = expected.begin();
-	SequenceIterator<T>* actualIter = actual->begin();
-
-	for (; (expectedIter != expected.end()) && (*actualIter != *actual->end());
-		++(expectedIter), ++(*actualIter)) {
-		assert((*expectedIter) == (**actualIter));
-	}
-}
-
-void PrintTestResults(std::string testName)
-{
-	std::cout << testName << " passed!" << std::endl;
-}
-
-void RunAllTests()
-{
-	TestAssert();
-	TestInitializerAssert();
-}
-
 void TestAssert()
 {
 	int a[] = { 1, 2, 3 };
@@ -55,7 +12,7 @@ void TestAssert()
 
 	AssertSequenceEquals(seq, seq1);
 
-	PrintTestResults("Test of sequence equality assertions");
+	delete(seq);
 }
 
 void TestInitializerAssert()
@@ -64,6 +21,15 @@ void TestInitializerAssert()
 
 	AssertSequenceEquals({1, 2, 3, 4}, seq);
 
-	PrintTestResults("Test of sequence and initializer list equality assertions");
+	delete(seq);
 }
 
+
+void InitializeTests(TestEnvironment& env)
+{
+	env.AddTest(UnitTest(10, "Test of sequence equality assertions", TestAssert))
+		.AddTest(UnitTest(11, "Test of sequence and initializer list equality assertions", TestInitializerAssert))
+		.AddTest(UnitTest(101, "Test if array insertion", TestArrayInsertions))
+		.AddTest(UnitTest(102, "Test of getting subsequence from array", TestArraySubsequence))
+		;
+}

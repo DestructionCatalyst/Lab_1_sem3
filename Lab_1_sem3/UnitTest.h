@@ -25,16 +25,17 @@ public:
 		TEST_FAILURE,
 		TEST_CRASH
 	};
-private:
-	string ConvertResult(TestResult result);
 
 public:
 	UnitTest(int id, string name, test_case testFunction);
 	UnitTest(string name, test_case testCase);
 
 public:
-	bool Run();
-	void PrintResult(TestResult result);
+	virtual bool Run();
+
+private:
+	string ConvertResult(TestResult result);
+	virtual void PrintResult(TestResult result);
 
 };
 

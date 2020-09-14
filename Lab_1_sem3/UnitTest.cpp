@@ -20,6 +20,7 @@ string UnitTest::ConvertResult(TestResult result)
 	case TEST_CRASH:
 		return "caused an exception!";
 	}
+	return "";
 }
 
 bool UnitTest::Run()
