@@ -140,10 +140,13 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Test.cpp" />
+    <ClCompile Include="TestEnvironment.cpp" />
+    <ClCompile Include="UnitTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArrayIterator.h" />
     <ClInclude Include="ArraySequence.h" />
+    <ClInclude Include="AssertionException.h" />
     <ClInclude Include="DynamicArray.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="ListIterator.h" />
@@ -155,6 +158,8 @@
     <ClInclude Include="Sequence.h" />
     <ClInclude Include="SequenceIterator.h" />
     <ClInclude Include="Test.h" />
+    <ClInclude Include="TestEnvironment.h" />
+    <ClInclude Include="UnitTest.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -19,6 +19,12 @@
     <Filter Include="Test">
       <UniqueIdentifier>{24e5b415-5d75-4141-80ee-39b5a8293785}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Test\Headers">
+      <UniqueIdentifier>{7a8fcb0e-fdf7-4a38-bcb0-7cb8de3c6bf8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Test\Sources">
+      <UniqueIdentifier>{2674532d-c48f-4cf2-824e-04c26908015c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DynamicArray.h">
@@ -57,8 +63,17 @@
     <ClInclude Include="MutableArrayIterator.h">
       <Filter>Iterators</Filter>
     </ClInclude>
+    <ClInclude Include="AssertionException.h">
+      <Filter>Test\Headers</Filter>
+    </ClInclude>
     <ClInclude Include="Test.h">
-      <Filter>Test</Filter>
+      <Filter>Test\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="TestEnvironment.h">
+      <Filter>Test\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest.h">
+      <Filter>Test\Headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -66,7 +81,13 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Test.cpp">
-      <Filter>Test</Filter>
+      <Filter>Test\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="TestEnvironment.cpp">
+      <Filter>Test\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest.cpp">
+      <Filter>Test\Sources</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

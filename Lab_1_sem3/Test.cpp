@@ -66,3 +66,4 @@ void TestInitializerAssert()
 
 	PrintTestResults("Test of sequence and initializer list equality assertions");
 }
+

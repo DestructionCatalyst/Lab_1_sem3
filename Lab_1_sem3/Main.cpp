@@ -7,6 +7,7 @@
 #include "ArraySequence.h"
 #include "ListSequence.h"
 #include "Test.h"
+#include "TestEnvironment.h"
 
 using namespace std;
 using namespace sequences;
@@ -184,10 +185,17 @@ int main() {
 
 	srand(time(0));
 
+	TestEnvironment env{};
+	
 	RunAllTests();
 
-	testArray();
-	testList();
+	 env.AddTest(UnitTest(888, "Array test", testArray))
+		.AddTest(UnitTest(999, "List test", testList))
+		//.AddTest(UnitTest(000, "Test that fails", []() {throw AssertionException();}))
+		 ;
+	
+	 env.RunAll();
+	
 	testArraySequence();
 	testListSequence();
 }
