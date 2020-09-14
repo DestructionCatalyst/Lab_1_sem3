@@ -32,6 +32,17 @@ namespace sequences {
 		{
 			list = new LinkedList<T>(*(newList.list));
 		}
+		ListSequence(const std::initializer_list<T>& initList):
+			ListSequence<T>()
+		{
+			auto initIter = initList.begin();
+
+			for (; initIter != initList.end(); ++initIter) {
+
+				Append(*initIter);
+			}
+
+		}
 		//Decomposition
 		T GetFirst() const override
 		{

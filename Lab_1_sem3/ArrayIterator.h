@@ -36,11 +36,17 @@ namespace sequences
 					return arr->Get(index);
 				throw std::out_of_range("Iterator is out of bounds!");
 			}
-			bool operator== (const ArrayIterator<T>& o) const
+			bool operator== (const SequenceIterator<T>& o) const override
 			{
-				return (index == o.index) && (arr == o.arr);
+				try {
+					const ArrayIterator<T>& array_o = dynamic_cast<const ArrayIterator<T>&>(o);
+					return (index == array_o.index) && (arr == array_o.arr);
+				}
+				catch (std::bad_cast e) {
+					return false;
+				}
 			}
-			bool operator!=(const ArrayIterator<T>& o) const
+			bool operator!=(const SequenceIterator<T>& o) const override
 			{
 				return !(*this == o);
 			}

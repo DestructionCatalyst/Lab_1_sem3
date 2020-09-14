@@ -39,6 +39,18 @@ namespace sequences {
 		{
 			arr = new DynamicArray<T>(*(array.arr));
 		}
+		ArraySequence(const std::initializer_list<T>& initList)
+			:Sequence<T>(), curSize(0)
+		{
+			auto initIter = initList.begin();
+			arr = new DynamicArray<T>(initList.size());
+
+			for (; initIter != initList.end(); ++initIter ) {
+				
+				Append(*initIter);
+			}
+
+		}
 
 		//Decomposition
 

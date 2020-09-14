@@ -32,6 +32,21 @@ namespace sequences
 			{
 				return ptr->GetContent();
 			}
+			bool operator== (const SequenceIterator<T>& o) const override
+			{
+				try {
+					const ListIterator<T>& list_o = dynamic_cast<const ListIterator<T>&>(o);
+					return ptr == list_o.ptr;
+				}
+				catch (std::bad_cast e) {
+					return false;
+				}
+			}
+			bool operator!=(const SequenceIterator<T>& o) const override
+			{
+				return !(*this == o);
+			}
+			/*
 			bool operator== (const ListIterator<T>& o) const 
 			{
 				return ptr == o.ptr;
@@ -40,6 +55,7 @@ namespace sequences
 			{
 				return !(*this == o);
 			}
+			*/
 			
 		};
 	}

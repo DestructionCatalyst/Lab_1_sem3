@@ -1,9 +1,12 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 #include "DynamicArray.h"
 #include "LinkedList.h"
 #include "ArraySequence.h"
 #include "ListSequence.h"
+#include "Test.h"
 
 using namespace std;
 using namespace sequences;
@@ -43,7 +46,7 @@ void testList() {
 }
 
 void testArraySequence() {
-	int a[5] = { 1, 3, 5, 7, 9 };
+	
 	ArraySequence<int>* list = new ArraySequence<int>();
 
 	list->Append(5);
@@ -52,7 +55,7 @@ void testArraySequence() {
 	list->InsertAt(2, 2);
 	list->InsertAt(100, 1);
 
-	ArraySequence<int>* list2 = new ArraySequence<int>(a, 5);
+	ArraySequence<int>* list2 = new ArraySequence<int>({ 1, 3, 5, 7, 9 });
 	ArraySequence<int>* subList = dynamic_cast<ArraySequence<int>*>(list2->GetSubsequence(1, 3));
 	ArraySequence<int>* list1 = new ArraySequence<int>(*subList);
 	ArraySequence<int>* list3 = dynamic_cast<ArraySequence<int>*>(list->Concat(subList));
@@ -112,7 +115,7 @@ void testArraySequence() {
 }
 
 void testListSequence() {
-	int a[5] = { 1, 3, 5, 7, 9 };
+	
 	ListSequence<int>* list = new ListSequence<int>();
 
 	list->Append(5);
@@ -121,8 +124,7 @@ void testListSequence() {
 	list->InsertAt(2, 2);
 	list->InsertAt(100, 1);
 
-	//cout << list->GetFirst() << " " << list->Get(1) << " " << list->Get(2) << " " << list->Get(3) << " " << list->GetLast() << endl;
-	ListSequence<int>* list2 = new ListSequence<int>(a, 5);
+	ListSequence<int>* list2 = new ListSequence<int>({ 1, 3, 5, 7, 9 });
 	ListSequence<int>* subList = dynamic_cast<ListSequence<int>*>(list2->GetSubsequence(1, 3));
 	ListSequence<int>* list1 = new ListSequence<int>(*subList);
 	ListSequence<int>* list3 = dynamic_cast<ListSequence<int>*>(list->Concat(subList));
@@ -179,6 +181,10 @@ void testListSequence() {
 }
 
 int main() {
+
+	srand(time(0));
+
+	RunAllTests();
 
 	testArray();
 	testList();

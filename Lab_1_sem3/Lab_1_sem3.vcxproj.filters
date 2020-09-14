@@ -16,6 +16,9 @@
     <Filter Include="Iterators">
       <UniqueIdentifier>{87defe28-8b04-435a-8240-f00cc99c3dee}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Test">
+      <UniqueIdentifier>{24e5b415-5d75-4141-80ee-39b5a8293785}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DynamicArray.h">
@@ -54,10 +57,16 @@
     <ClInclude Include="MutableArrayIterator.h">
       <Filter>Iterators</Filter>
     </ClInclude>
+    <ClInclude Include="Test.h">
+      <Filter>Test</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Test.cpp">
+      <Filter>Test</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
