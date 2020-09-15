@@ -69,7 +69,7 @@ namespace sequences {
 				LinkedList<T>* subList = new LinkedList<T>();
 				const_iterator itr = *itemIterator_(startIndex);
 
-				for (int i = startIndex; i < endIndex; ++i, ++itr) {
+				for (int i = startIndex; i <= endIndex; ++i, ++itr) {
 					subList->Append(T(*itr));
 				}
 

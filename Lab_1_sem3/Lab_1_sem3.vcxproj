@@ -139,6 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ArraySequenceTests.cpp" />
+    <ClCompile Include="ListSequenceTests.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="TestCase.cpp" />
@@ -155,6 +156,7 @@
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="ListIterator.h" />
     <ClInclude Include="ListSequence.h" />
+    <ClInclude Include="ListSequenceTests.h" />
     <ClInclude Include="MutableArrayIterator.h" />
     <ClInclude Include="MutableListIterator.h" />
     <ClInclude Include="MutableSequenceIterator.h" />

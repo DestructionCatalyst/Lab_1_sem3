@@ -69,8 +69,10 @@ namespace sequences {
 
 			T* newElements = (T*)realloc(elements, newSize * sizeof(T));
 			
-			if (newElements)
+			if (newElements) {
 				elements = newElements;
+				capacity = newSize;
+			}
 			else
 				throw std::exception("Not enough memory!");
 

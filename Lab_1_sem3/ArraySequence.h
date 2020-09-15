@@ -200,7 +200,7 @@ namespace sequences {
 	private:
 		void ExpandIfNeeded(int multiplier = 2)
 		{
-			if (curSize >= arr->GetCapacity()) {
+			if (curSize >= arr->GetCapacity() - 1) {
 				arr->Resize(arr->GetCapacity() * multiplier);
 			}
 		}

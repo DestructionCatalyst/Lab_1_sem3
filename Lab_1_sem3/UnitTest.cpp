@@ -1,4 +1,5 @@
 #include "UnitTest.h"
+#define CATCH_EXCEPTIONS
 
 UnitTest::UnitTest(int id, string name, test_function_t testFunction):
 	id(id), name(name), testCase(new TestCase(testFunction))
@@ -35,10 +36,13 @@ bool UnitTest::Run()
 	{
 		PrintResult(TEST_FAILURE);
 	}
+#ifdef CATCH_EXCEPTIONS
 	catch (...)
-	{
-		PrintResult(TEST_CRASH);
-	}
+		{
+			PrintResult(TEST_CRASH);
+		}
+#endif // CATCH_EXCEPTIONS
+	
 	return false;
 
 }

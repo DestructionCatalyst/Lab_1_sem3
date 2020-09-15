@@ -11,6 +11,7 @@
 #include "SequenceAssertions.h"
 
 #include "ArraySequenceTests.h"
+#include "ListSequenceTests.h"
 
 void InitializeTests(TestEnvironment& env);
 

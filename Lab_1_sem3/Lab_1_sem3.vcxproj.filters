@@ -96,6 +96,9 @@
     <ClInclude Include="TestCase.h">
       <Filter>Test\Headers</Filter>
     </ClInclude>
+    <ClInclude Include="ListSequenceTests.h">
+      <Filter>SequenceTests\Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -115,6 +118,9 @@
     </ClCompile>
     <ClCompile Include="TestCase.cpp">
       <Filter>Test\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="ListSequenceTests.cpp">
+      <Filter>SequenceTests\Sources</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

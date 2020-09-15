@@ -29,7 +29,19 @@ void InitializeTests(TestEnvironment& env)
 {
 	env.AddTest(new UnitTest(10, "Test of sequence equality assertions", TestAssert))
 		.AddTest(new UnitTest(11, "Test of sequence and initializer list equality assertions", TestInitializerAssert))
+
 		.AddTest(new UnitTest(101, "Test if array insertion", TestArrayInsertions))
 		.AddTest(new UnitTest(102, "Test of getting subsequence from array", TestArraySubsequence))
+		.AddTest(new UnitTest(103, "Test of array concatenation", TestArrayConcatenation))
+		.AddTest(new UnitTest(151, "Test of array Map function", TestArrayMap))
+		.AddTest(new UnitTest(152, "Test of array Where function", TestArrayWhere))
+		.AddTest(new UnitTest(153, "Test of array Reduce function", TestArrayReduce))
+
+		.AddTest(new UnitTest(101, "Test if list insertion", TestListInsertions))
+		.AddTest(new UnitTest(102, "Test of getting subsequence from list", TestListSubsequence))
+		.AddTest(new UnitTest(103, "Test of list concatenation", TestListConcatenation))
+		.AddTest(new UnitTest(151, "Test of list Map function", TestListMap))
+		.AddTest(new UnitTest(152, "Test of list Where function", TestListWhere))
+		.AddTest(new UnitTest(153, "Test of list Reduce function", TestListReduce))
 		;
 }
