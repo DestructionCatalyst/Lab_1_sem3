@@ -14,6 +14,7 @@ namespace sequences {
 		};
 
 		//Decomposition
+
 		virtual T GetFirst() const = 0;
 		virtual T GetLast() const = 0;
 		virtual T Get(int index) const = 0;
@@ -21,6 +22,7 @@ namespace sequences {
 		virtual int GetLength() const = 0;
 
 		//Operations
+		//Constant time for every type
 		virtual void Append(T item) = 0;
 		virtual void Prepend(T item) = 0;
 		virtual void InsertAt(T item, int index) = 0;

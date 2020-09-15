@@ -183,13 +183,15 @@ void testListSequence() {
 
 int main() {
 
-	srand(time(0));
-
 	TestEnvironment env{};
 
 	InitializeTests(env);
 	
 	env.RunAll();
+
+	//srand(69);
+
+	//cout << rand() << " " << rand() << " " << rand() << endl;
 	
 	//testArraySequence();
 	//testListSequence();

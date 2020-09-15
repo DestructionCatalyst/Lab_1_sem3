@@ -13,6 +13,8 @@
 #include "ArraySequenceTests.h"
 #include "ListSequenceTests.h"
 
+#include "NumberGeneratorTests.h"
+
 void InitializeTests(TestEnvironment& env);
 
 

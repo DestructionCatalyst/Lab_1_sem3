@@ -34,6 +34,21 @@
     <Filter Include="SequenceTests\Sources">
       <UniqueIdentifier>{763e0615-9f88-46b6-8964-588c47fdd2aa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SequenceGenerator">
+      <UniqueIdentifier>{ac3f2329-f636-4e16-a171-6193c8852388}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SequenceGenerator\NumberGenerator">
+      <UniqueIdentifier>{3820f045-9734-4759-99df-98e44f2e296a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SequenceGenerator\NumberGenerator\Headers">
+      <UniqueIdentifier>{cdc47402-e417-40cb-ad47-10da781d4b3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SequenceGenerator\NumberGenerator\Sources">
+      <UniqueIdentifier>{37e6a48f-b8e1-4725-b2f5-f811c479643f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SequenceGenerator\Tests">
+      <UniqueIdentifier>{1fef9109-3eeb-445a-96e8-a1c66e9263b3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DynamicArray.h">
@@ -99,6 +114,24 @@
     <ClInclude Include="ListSequenceTests.h">
       <Filter>SequenceTests\Headers</Filter>
     </ClInclude>
+    <ClInclude Include="INumberGenerator.h">
+      <Filter>SequenceGenerator\NumberGenerator\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstantNumberGenerator.h">
+      <Filter>SequenceGenerator\NumberGenerator\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsecutiveNumberGenerator.h">
+      <Filter>SequenceGenerator\NumberGenerator\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ReverseNumberGenerator.h">
+      <Filter>SequenceGenerator\NumberGenerator\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="NumberGeneratorTests.h">
+      <Filter>SequenceGenerator\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomNumberGenerator.h">
+      <Filter>SequenceGenerator\NumberGenerator\Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -121,6 +154,21 @@
     </ClCompile>
     <ClCompile Include="ListSequenceTests.cpp">
       <Filter>SequenceTests\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstantNumberGenerator.cpp">
+      <Filter>SequenceGenerator\NumberGenerator\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsecutiveNumberGenerator.cpp">
+      <Filter>SequenceGenerator\NumberGenerator\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="ReverseNumberGenerator.cpp">
+      <Filter>SequenceGenerator\NumberGenerator\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="NumberGeneratorTests.cpp">
+      <Filter>SequenceGenerator\Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="RandomNumberGenerator.cpp">
+      <Filter>SequenceGenerator\NumberGenerator\Sources</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
