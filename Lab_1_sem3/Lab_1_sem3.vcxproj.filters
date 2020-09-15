@@ -75,9 +75,6 @@
     <ClInclude Include="AssertionException.h">
       <Filter>Test\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Test.h">
-      <Filter>Test\Headers</Filter>
-    </ClInclude>
     <ClInclude Include="TestEnvironment.h">
       <Filter>Test\Headers</Filter>
     </ClInclude>
@@ -90,13 +87,19 @@
     <ClInclude Include="ArraySequenceTests.h">
       <Filter>SequenceTests\Headers</Filter>
     </ClInclude>
+    <ClInclude Include="Test.h">
+      <Filter>SequenceTests\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ITestCase.h">
+      <Filter>Test\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="TestCase.h">
+      <Filter>Test\Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Test.cpp">
-      <Filter>Test\Sources</Filter>
     </ClCompile>
     <ClCompile Include="TestEnvironment.cpp">
       <Filter>Test\Sources</Filter>
@@ -106,6 +109,12 @@
     </ClCompile>
     <ClCompile Include="ArraySequenceTests.cpp">
       <Filter>SequenceTests\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Test.cpp">
+      <Filter>SequenceTests\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="TestCase.cpp">
+      <Filter>Test\Sources</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
