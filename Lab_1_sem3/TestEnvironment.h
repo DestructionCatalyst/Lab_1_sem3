@@ -17,6 +17,8 @@ public:
 	static void Assert(int expression);
 private:
 	void PrintResults(int testsPassed);
+public:
+	~TestEnvironment();
 	
 };
 

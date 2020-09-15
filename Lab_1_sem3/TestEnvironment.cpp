@@ -35,3 +35,11 @@ void TestEnvironment::Assert(int expression)
 	if (!expression)
 		throw AssertionException();
 }
+
+TestEnvironment::~TestEnvironment()
+{
+	for (UnitTest* test : tests)
+	{
+		delete(test);
+	}
+}
