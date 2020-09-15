@@ -20,7 +20,7 @@ private:
 	int id;
 	string name;
 
-	ITestCase* testFunction;
+	ITestCase* testCase;
 public:
 	enum TestResult {
 		TEST_SUCCESS,
@@ -34,6 +34,8 @@ public:
 
 public:
 	virtual bool Run();
+
+	virtual ~UnitTest();
 
 private:
 	string ConvertResult(TestResult result);

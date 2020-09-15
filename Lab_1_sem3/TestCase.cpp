@@ -1,7 +1,7 @@
 #include "TestCase.h"
 
 TestCase::TestCase(function<void()> testFunction):
-	testFunction(testFunction)
+	ITestCase(), testFunction(testFunction)
 {}
 
 

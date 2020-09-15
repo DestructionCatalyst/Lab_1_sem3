@@ -8,9 +8,9 @@ using std::vector;
 class TestEnvironment
 {
 private:
-	vector<UnitTest> tests{};
+	vector<UnitTest*> tests{};
 public:
-	TestEnvironment& AddTest(UnitTest testToAdd);
+	TestEnvironment& AddTest(UnitTest* testToAdd);
 	void Run(int testIndex);
 	void RunAll();
 public:

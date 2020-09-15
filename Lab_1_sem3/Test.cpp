@@ -27,9 +27,9 @@ void TestInitializerAssert()
 
 void InitializeTests(TestEnvironment& env)
 {
-	env.AddTest(UnitTest(10, "Test of sequence equality assertions", TestAssert))
-		.AddTest(UnitTest(11, "Test of sequence and initializer list equality assertions", TestInitializerAssert))
-		.AddTest(UnitTest(101, "Test if array insertion", TestArrayInsertions))
-		.AddTest(UnitTest(102, "Test of getting subsequence from array", TestArraySubsequence))
+	env.AddTest(new UnitTest(10, "Test of sequence equality assertions", TestAssert))
+		.AddTest(new UnitTest(11, "Test of sequence and initializer list equality assertions", TestInitializerAssert))
+		.AddTest(new UnitTest(101, "Test if array insertion", TestArrayInsertions))
+		.AddTest(new UnitTest(102, "Test of getting subsequence from array", TestArraySubsequence))
 		;
 }

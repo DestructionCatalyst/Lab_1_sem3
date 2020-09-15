@@ -1,11 +1,11 @@
 #include "UnitTest.h"
 
 UnitTest::UnitTest(int id, string name, test_function_t testFunction):
-	id(id), name(name), testFunction(new TestCase(testFunction))
+	id(id), name(name), testCase(new TestCase(testFunction))
 {}
 
 UnitTest::UnitTest(string name, test_function_t testFunction) :
-	name(name), testFunction(new TestCase(testFunction))
+	name(name), testCase(new TestCase(testFunction))
 {
 	id = rand();
 }
@@ -27,7 +27,7 @@ bool UnitTest::Run()
 {
 	try
 	{
-		testFunction->Execute();
+		testCase->Execute();
 		PrintResult(TEST_SUCCESS);
 		return true;
 	}
@@ -46,4 +46,9 @@ bool UnitTest::Run()
 void UnitTest::PrintResult(TestResult result)
 {
 	std::cout << "Test " << id << " (" << name << ") " << ConvertResult(result) << std::endl;
+}
+
+UnitTest::~UnitTest()
+{
+	delete(testCase);
 }

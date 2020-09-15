@@ -1,6 +1,6 @@
 #include "TestEnvironment.h"
 
-TestEnvironment& TestEnvironment::AddTest(UnitTest testToAdd)
+TestEnvironment& TestEnvironment::AddTest(UnitTest* testToAdd)
 {
 	tests.push_back(testToAdd);
 	return *this;
@@ -8,17 +8,17 @@ TestEnvironment& TestEnvironment::AddTest(UnitTest testToAdd)
 
 void TestEnvironment::Run(int testIndex)
 {
-	tests[testIndex].Run();
+	tests[testIndex]->Run();
 }
 
 void TestEnvironment::RunAll()
 {
 	int passed = 0;
 
-	for (UnitTest test : tests)
+	for (UnitTest* test : tests)
 	{
 		//Add 1 if test is passed
-		passed += test.Run();
+		passed += test->Run();
 	}
 
 	PrintResults(passed);
