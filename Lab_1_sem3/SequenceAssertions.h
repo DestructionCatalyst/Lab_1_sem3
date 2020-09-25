@@ -5,6 +5,8 @@
 #include "ListSequence.h"
 #include "SequenceIterator.h"
 
+#include "Comparators.h"
+
 #include "TestEnvironment.h"
 
 using namespace sequences;
@@ -39,5 +41,19 @@ void AssertSequenceEquals(std::initializer_list<T> expected, Sequence<T>* actual
 	for (; (expectedIter != expected.end()) && (*actualIter != *actual->end());
 		++(expectedIter), ++(*actualIter)) {
 		TestEnvironment::Assert((*expectedIter) == (**actualIter));
+	}
+}
+
+//compare must return negative value if parameters are in wrong onder, non-negarive elsewhere
+template<class T>
+void AssertSequenceSorted(Sequence<T>* actual, std::function<int(T, T)> compare = DefaultCompare<T>)
+{
+	SequenceIterator<T>* firstIter = actual->begin();
+	SequenceIterator<T>* nextIter = actual->begin();
+
+	++(*nextIter);
+
+	for (; (*nextIter) != (*actual->end()); ++(*firstIter), ++(*nextIter)) {
+		TestEnvironment::Assert(compare(**firstIter, **nextIter) > 0);
 	}
 }

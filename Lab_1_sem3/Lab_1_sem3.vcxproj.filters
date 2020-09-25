@@ -49,6 +49,9 @@
     <Filter Include="NumberGenerator\Code\Sources">
       <UniqueIdentifier>{37e6a48f-b8e1-4725-b2f5-f811c479643f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Timer">
+      <UniqueIdentifier>{caa3fb3d-b0b2-42c1-b499-495a79cef93d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DynamicArray.h">
@@ -138,6 +141,12 @@
     <ClInclude Include="ItemGenerator.h">
       <Filter>NumberGenerator\Code\Headers</Filter>
     </ClInclude>
+    <ClInclude Include="Comparators.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Timer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -178,6 +187,9 @@
     </ClCompile>
     <ClCompile Include="SequenceGeneratorTest.cpp">
       <Filter>SequenceTests\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Timer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

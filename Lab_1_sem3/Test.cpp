@@ -24,11 +24,31 @@ void TestInitializerAssert()
 	delete(seq);
 }
 
+void TestSortedAssert()
+{
+	Sequence<int>* seq = new ArraySequence<int>({ 1, 2, 3, 4 });
+
+	AssertSequenceSorted(seq);
+
+	seq->Swap(1, 2);
+
+	try
+	{
+		AssertSequenceSorted(seq);
+		TestEnvironment::Assert(false);
+	}
+	catch (AssertionException e)
+	{}
+
+	delete(seq);
+}
+
 
 void InitializeTests(TestEnvironment& env)
 {
 	env.AddTest(new UnitTest(10, "Test of sequence equality assertions", TestAssert))
 		.AddTest(new UnitTest(11, "Test of sequence and initializer list equality assertions", TestInitializerAssert))
+		.AddTest(new UnitTest(12, "Test of sequence sorted assertions", TestSortedAssert))
 
 		.AddTest(new UnitTest(101, "Test of array insertion", TestArrayInsertions))
 		.AddTest(new UnitTest(102, "Test of getting subsequence from array", TestArraySubsequence))
