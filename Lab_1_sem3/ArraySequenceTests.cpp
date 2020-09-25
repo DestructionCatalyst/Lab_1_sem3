@@ -95,3 +95,17 @@ void TestArrayReduce()
 
 	delete(arr);
 }
+
+void TestArraySwaps()
+{
+	Sequence<int>* arr = new ArraySequence<int>({ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 });
+
+	arr->Swap(2, 6);
+	arr->Swap(0, 8);
+	arr->Swap(9, 4);
+	arr->Swap(6, 4);
+
+	AssertSequenceEquals({ 9, 2, 7, 4, 3, 6, 10, 8, 1, 5 }, arr);
+
+	delete(arr);
+}

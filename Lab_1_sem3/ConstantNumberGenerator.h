@@ -7,6 +7,6 @@ private:
 	int numberToReturn;
 public:
 	ConstantNumberGenerator(int number);
-	int NextInt() override;
+	int NextItem() override;
 };
 

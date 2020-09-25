@@ -7,6 +7,6 @@ private:
 	int numberToReturn;
 public:
 	ConsecutiveNumberGenerator(int startNumber);
-	int NextInt() override;
+	int NextItem() override;
 };
 

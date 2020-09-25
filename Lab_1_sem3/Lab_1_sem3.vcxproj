@@ -146,6 +146,7 @@
     <ClCompile Include="NumberGeneratorTests.cpp" />
     <ClCompile Include="RandomNumberGenerator.cpp" />
     <ClCompile Include="ReverseNumberGenerator.cpp" />
+    <ClCompile Include="SequenceGeneratorTest.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="TestCase.cpp" />
     <ClCompile Include="TestEnvironment.cpp" />
@@ -160,6 +161,7 @@
     <ClInclude Include="ConstantNumberGenerator.h" />
     <ClInclude Include="DynamicArray.h" />
     <ClInclude Include="INumberGenerator.h" />
+    <ClInclude Include="ItemGenerator.h" />
     <ClInclude Include="ITestCase.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="ListIterator.h" />
@@ -174,6 +176,7 @@
     <ClInclude Include="ReverseNumberGenerator.h" />
     <ClInclude Include="Sequence.h" />
     <ClInclude Include="SequenceAssertions.h" />
+    <ClInclude Include="SequenceGeneratorTest.h" />
     <ClInclude Include="SequenceIterator.h" />
     <ClInclude Include="Test.h" />
     <ClInclude Include="TestCase.h" />

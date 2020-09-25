@@ -15,3 +15,5 @@ void TestListConcatenation();
 void TestListMap();
 void TestListWhere();
 void TestListReduce();
+
+void TestListSwaps();

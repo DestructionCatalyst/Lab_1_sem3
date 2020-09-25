@@ -95,3 +95,19 @@ void TestListReduce()
 
 	delete(list);
 }
+
+void TestListSwaps()
+{
+	Sequence<int>* list = new ListSequence<int>({ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 });
+
+	list->Swap(2, 6);
+	list->Swap(0, 8);
+	list->Swap(9, 4);
+	list->Swap(6, 4);
+
+	AssertSequenceEquals({ 9, 2, 7, 4, 3, 6, 10, 8, 1, 5 }, list);
+	TestEnvironment::Assert(list->GetLast() == 5);
+
+	delete(list);
+
+}

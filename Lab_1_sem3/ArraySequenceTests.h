@@ -15,3 +15,5 @@ void TestArrayConcatenation();
 void TestArrayMap();
 void TestArrayWhere();
 void TestArrayReduce();
+
+void TestArraySwaps();

@@ -5,7 +5,7 @@ ConsecutiveNumberGenerator::ConsecutiveNumberGenerator(int startNumber) :
 	INumberGenerator(), numberToReturn(startNumber)
 {}
 
-int ConsecutiveNumberGenerator::NextInt()
+int ConsecutiveNumberGenerator::NextItem()
 {
 	return numberToReturn++;
 }

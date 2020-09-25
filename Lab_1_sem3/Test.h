@@ -14,6 +14,7 @@
 #include "ListSequenceTests.h"
 
 #include "NumberGeneratorTests.h"
+#include "SequenceGeneratorTest.h"
 
 void InitializeTests(TestEnvironment& env);
 

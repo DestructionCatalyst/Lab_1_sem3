@@ -6,6 +6,7 @@
 #include "Sequence.h"
 #include "ArrayIterator.h"
 #include "MutableArrayIterator.h"
+#include "ItemGenerator.h"
 
 #define DEFAULT_SIZE 8
 #define min(num1, num2) ((num1<num2)?num1:num2)
@@ -50,6 +51,16 @@ namespace sequences {
 				Append(*initIter);
 			}
 
+		}
+		ArraySequence(ItemGenerator<T>* gen, int length):
+			Sequence<T>(), curSize(length)
+		{
+			arr = new DynamicArray<T>(length);
+
+			for (int i = 0; i < length; i++)
+			{
+				Set(gen->NextItem(), i);
+			}
 		}
 
 		//Decomposition
@@ -121,6 +132,13 @@ namespace sequences {
 		void Set(T item, int index)
 		{
 			arr->Set(item, index);
+		}
+
+		void Swap(int item1, int item2) override
+		{
+			T tmp = Get(item1);
+			Set(Get(item2), item1);
+			Set(tmp, item2);
 		}
 		
 		//Creates a copy and concatenates {list} to it 

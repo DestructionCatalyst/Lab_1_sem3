@@ -12,7 +12,7 @@ RandomNumberGenerator::RandomNumberGenerator(int seed) :
 	srand(seed);
 }
 
-int RandomNumberGenerator::NextInt()
+int RandomNumberGenerator::NextItem()
 {
 	return rand();
 }

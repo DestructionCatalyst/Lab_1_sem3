@@ -189,7 +189,12 @@ int main() {
 	
 	env.RunAll();
 
-	//srand(69);
+	//srand(420);
+
+	//for (int i = 0; i < 10; i++)
+		//cout << rand() << ", ";
+
+	//cout << endl;
 
 	//cout << rand() << " " << rand() << " " << rand() << endl;
 	

@@ -133,6 +133,38 @@ namespace sequences {
 			
 			return bigList;
 		}
+		void Swap(int index1, int index2)
+		{
+			EnsureRightOrder(index1, index2);
+
+			if (index1 == index2)
+				return;
+
+			if (index1 == 0)
+			{
+				SwapFirstWith(index2);
+				return;
+			}
+
+			iterator firstItemIter = begin();
+
+			for (int i = 0; i < index1 - 1; i++)
+				++firstItemIter;
+
+			iterator secondItemIter = firstItemIter;
+
+			for (int i = index1 - 1; i < index2 - 1; i++)
+				++secondItemIter;
+
+			SwapNextPointers(firstItemIter, secondItemIter);
+
+			++firstItemIter, ++secondItemIter;
+
+			SwapNextPointers(firstItemIter, secondItemIter);
+
+			if (index2 = GetLength() - 1)
+				FixTail();
+		}
 	public:
 		const_iterator* begin_() const
 		{
@@ -148,6 +180,7 @@ namespace sequences {
 
 			for (int i = 0; i < index; i++)
 				++(*itr);
+
 
 			return itr;
 		}
@@ -170,8 +203,51 @@ namespace sequences {
 			return itr;
 		}
 	public:
-		~LinkedList() {
+		~LinkedList()
+		{
 			delete(head);
+		}
+	private:
+		void EnsureRightOrder(int& a, int& b)
+		{
+			if (a > b) {
+				a = a ^ b;
+				b = b ^ a;
+				a = a ^ b;
+			}
+		}
+		void SwapNextPointers(iterator iter1, iterator iter2)
+		{
+			Node<T>* tmp = iter1.GetNextPointer();
+			iter1.SetNext(iter2.GetNextPointer());
+			iter2.SetNext(tmp);
+		}
+		void SwapFirstWith(int index2)
+		{
+			iterator secondItemIter = begin();
+
+			for (int i = 0; i < index2 - 1; i++)
+				++secondItemIter;
+
+			Node<T>* newHead = secondItemIter.GetNextPointer();
+			secondItemIter.SetNext(head);
+			head = newHead;
+
+			++secondItemIter;
+
+			SwapNextPointers(begin(), secondItemIter);
+
+			if (index2 = GetLength() - 1)
+				FixTail();
+		}
+		void FixTail()
+		{
+			Node<T>* ptr = head;
+			
+			while (ptr->Next() != nullptr)
+				ptr = ptr->Next();
+
+			tail = ptr;
 		}
 	
 	};

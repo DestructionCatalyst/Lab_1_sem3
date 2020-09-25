@@ -13,6 +13,6 @@ private:
 public:
 	RandomNumberGenerator();
 	RandomNumberGenerator(int seed);
-	int NextInt() override;
+	int NextItem() override;
 };
 

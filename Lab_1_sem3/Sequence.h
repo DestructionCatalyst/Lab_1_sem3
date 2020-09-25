@@ -24,6 +24,8 @@ namespace sequences {
 		//Operations
 		//Constant time for every type
 		virtual void Append(T item) = 0;
+
+
 		virtual void Prepend(T item) = 0;
 		virtual void InsertAt(T item, int index) = 0;
 		virtual Sequence<T>* Concat(Sequence<T>* list) = 0;
@@ -35,6 +37,8 @@ namespace sequences {
 		virtual const_iterator* begin() const = 0;
 		virtual const_iterator* end() const = 0;
 		virtual const_iterator* itemIterator(int index) const = 0;
+
+		virtual void Swap(int item1, int item2) = 0;
 
 		virtual ~Sequence() {};
 	};

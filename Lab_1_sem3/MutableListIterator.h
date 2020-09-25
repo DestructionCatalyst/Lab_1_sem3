@@ -17,6 +17,10 @@ namespace sequences
 			MutableListIterator(Node<T>* start) :
 				MutableSequenceIterator<T>(), ListIterator<T>(start)
 			{}
+
+			MutableListIterator(const MutableListIterator<T>& iter) :
+				ListIterator<T>(iter)
+			{}
 		public:
 			void SetContent(T content) override
 			{

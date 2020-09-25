@@ -4,7 +4,7 @@ ReverseNumberGenerator::ReverseNumberGenerator(int startNumber) :
 	INumberGenerator(), numberToReturn(startNumber)
 {}
 
-int ReverseNumberGenerator::NextInt()
+int ReverseNumberGenerator::NextItem()
 {
 	return numberToReturn--;
 }

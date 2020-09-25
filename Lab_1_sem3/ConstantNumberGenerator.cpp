@@ -4,7 +4,7 @@ ConstantNumberGenerator::ConstantNumberGenerator(int number):
 	INumberGenerator(), numberToReturn(number)
 {}
 
-int ConstantNumberGenerator::NextInt()
+int ConstantNumberGenerator::NextItem()
 {
 	return numberToReturn;
 }

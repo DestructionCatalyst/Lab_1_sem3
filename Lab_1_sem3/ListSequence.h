@@ -5,6 +5,7 @@
 #include "Sequence.h"
 #include "ListIterator.h"
 #include "SequenceIterator.h"
+#include "ItemGenerator.h"
 
 #define min(num1, num2) ((num1<num2)?num1:num2)
 
@@ -42,6 +43,12 @@ namespace sequences {
 				Append(*initIter);
 			}
 
+		}
+		ListSequence(ItemGenerator<T>* gen, int length):
+			ListSequence<T>()
+		{
+			for (int i = 0; i < length; i++)
+				list->Append(gen->NextItem());
 		}
 		//Decomposition
 		T GetFirst() const override
@@ -86,6 +93,10 @@ namespace sequences {
 				bigList->Append(list->Get(i));
 			}
 			return bigList;
+		}
+		void Swap(int item1, int item2) override
+		{
+			list->Swap(item1, item2);
 		}
 		Sequence<T>* Map(std::function<T(T)> f) const override
 		{
