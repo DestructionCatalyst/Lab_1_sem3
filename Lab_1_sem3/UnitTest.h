@@ -4,6 +4,7 @@
 #include <functional>
 #include <random>
 #include <iostream>
+#include <sstream>
 
 #include "AssertionException.h"
 #include "ITestCase.h"
@@ -19,7 +20,7 @@ public:
 private:
 	int id;
 	string name;
-
+protected:
 	ITestCase* testCase;
 public:
 	enum TestResult {
@@ -29,6 +30,8 @@ public:
 	};
 
 public:
+	UnitTest(string name, ITestCase* testCase);
+	UnitTest(int id, string name, ITestCase* testCase);
 	UnitTest(int id, string name, test_function_t testFunction);
 	UnitTest(string name, test_function_t testCase);
 
@@ -39,6 +42,8 @@ public:
 
 private:
 	string ConvertResult(TestResult result);
+protected:
+	virtual string GenerateResultString(TestResult result);
 	virtual void PrintResult(TestResult result);
 
 };

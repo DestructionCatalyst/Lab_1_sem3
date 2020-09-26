@@ -52,6 +52,9 @@
     <Filter Include="Timer">
       <UniqueIdentifier>{caa3fb3d-b0b2-42c1-b499-495a79cef93d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Test\TimedTest">
+      <UniqueIdentifier>{d2941edc-fee4-48a2-aa4c-c786c5beb634}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DynamicArray.h">
@@ -147,6 +150,15 @@
     <ClInclude Include="Timer.h">
       <Filter>Timer</Filter>
     </ClInclude>
+    <ClInclude Include="TimerTest.h">
+      <Filter>Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="TimedTestCase.h">
+      <Filter>Test\TimedTest</Filter>
+    </ClInclude>
+    <ClInclude Include="TimedTest.h">
+      <Filter>Test\TimedTest</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -190,6 +202,15 @@
     </ClCompile>
     <ClCompile Include="Timer.cpp">
       <Filter>Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="TimerTest.cpp">
+      <Filter>Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="TimedTestCase.cpp">
+      <Filter>Test\TimedTest</Filter>
+    </ClCompile>
+    <ClCompile Include="TimedTest.cpp">
+      <Filter>Test\TimedTest</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,6 +1,10 @@
 #include "UnitTest.h"
 #define CATCH_EXCEPTIONS
 
+UnitTest::UnitTest(int id, string name, ITestCase* testCase) :
+	id(id), name(name), testCase(testCase)
+{}
+
 UnitTest::UnitTest(int id, string name, test_function_t testFunction):
 	id(id), name(name), testCase(new TestCase(testFunction))
 {}
@@ -49,7 +53,12 @@ bool UnitTest::Run()
 
 void UnitTest::PrintResult(TestResult result)
 {
-	std::cout << "Test " << id << " (" << name << ") " << ConvertResult(result) << std::endl;
+	std::cout << GenerateResultString(result) << std::endl;
+}
+
+string UnitTest::GenerateResultString(TestResult result)
+{
+	return (std::stringstream() << "Test " << id << " (" << name << ") " << ConvertResult(result)).str();
 }
 
 UnitTest::~UnitTest()

@@ -150,7 +150,10 @@
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="TestCase.cpp" />
     <ClCompile Include="TestEnvironment.cpp" />
+    <ClCompile Include="TimedTest.cpp" />
+    <ClCompile Include="TimedTestCase.cpp" />
     <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="TimerTest.cpp" />
     <ClCompile Include="UnitTest.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -183,7 +186,10 @@
     <ClInclude Include="Test.h" />
     <ClInclude Include="TestCase.h" />
     <ClInclude Include="TestEnvironment.h" />
+    <ClInclude Include="TimedTest.h" />
+    <ClInclude Include="TimedTestCase.h" />
     <ClInclude Include="Timer.h" />
+    <ClInclude Include="TimerTest.h" />
     <ClInclude Include="UnitTest.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

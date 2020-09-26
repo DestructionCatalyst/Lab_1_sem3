@@ -43,12 +43,38 @@ void TestSortedAssert()
 	delete(seq);
 }
 
+void TestTimedTest(Timer& t)
+{
+	long long fact = 1L;
+	int a = 0;
+
+	t.Start();
+	{
+		for (int i = 1; i <= 20; ++i)
+		{
+			fact *= i;
+		}
+		for (int i = 1; i <= 1000000; ++i)
+		{
+			a = (int)(std::sqrt(i));
+		}
+		//Sleep(100);
+	}
+	t.Pause();
+
+	TestEnvironment::Assert(fact == 2432902008176640000);
+	TestEnvironment::Assert(a == 1000);
+}
+
 
 void InitializeTests(TestEnvironment& env)
 {
 	env.AddTest(new UnitTest(10, "Test of sequence equality assertions", TestAssert))
 		.AddTest(new UnitTest(11, "Test of sequence and initializer list equality assertions", TestInitializerAssert))
 		.AddTest(new UnitTest(12, "Test of sequence sorted assertions", TestSortedAssert))
+		//Slow and unstable
+		//.AddTest(new UnitTest(53, "Test of timer", TestTimer))
+		.AddTest(new TimedTest(53, "Basic timed test", TestTimedTest))
 
 		.AddTest(new UnitTest(101, "Test of array insertion", TestArrayInsertions))
 		.AddTest(new UnitTest(102, "Test of getting subsequence from array", TestArraySubsequence))
