@@ -1,5 +1,5 @@
 #include "UnitTest.h"
-#define CATCH_EXCEPTIONS
+//#define CATCH_EXCEPTIONS
 
 UnitTest::UnitTest(int id, string name, ITestCase* testCase) :
 	id(id), name(name), testCase(testCase)

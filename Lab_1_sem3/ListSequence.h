@@ -1,5 +1,6 @@
 #pragma once
 #include <functional>
+#include <iostream>
 
 #include "LinkedList.h"
 #include "Sequence.h"
@@ -84,6 +85,10 @@ namespace sequences {
 		{
 			list->InsertAt(item, index);
 		}
+		void Set(T item, int index) override
+		{
+			itemIterator(index).SetContent(item);
+		}
 		//Creates a copy and concatenates {list} to it 
 		Sequence<T>* Concat(Sequence<T>* list) override
 		{
@@ -97,6 +102,16 @@ namespace sequences {
 		void Swap(int item1, int item2) override
 		{
 			list->Swap(item1, item2);
+		}
+	public:
+		void Print() const override
+		{
+			const_iterator iter = dcast(begin());
+			for (; iter != dcast(end()); ++iter)
+			{
+				std::cout << *iter << " ";
+			}
+			std::cout << std::endl;
 		}
 		Sequence<T>* Map(std::function<T(T)> f) const override
 		{

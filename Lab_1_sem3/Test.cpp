@@ -26,19 +26,24 @@ void TestInitializerAssert()
 
 void TestSortedAssert()
 {
-	Sequence<int>* seq = new ArraySequence<int>({ 1, 2, 3, 4 });
+	Sequence<int>* seq = new ArraySequence<int>({ 1, 2, 3, 3 });
 
 	AssertSequenceSorted(seq);
 
 	seq->Swap(1, 2);
 
+	bool failed = false;
+
 	try
 	{
 		AssertSequenceSorted(seq);
-		TestEnvironment::Assert(false);
 	}
 	catch (AssertionException e)
-	{}
+	{
+		failed = true;
+	}
+
+	TestEnvironment::Assert(failed);
 
 	delete(seq);
 }
@@ -66,6 +71,8 @@ void TestTimedTest(Timer& t)
 	TestEnvironment::Assert(a == 1000);
 }
 
+//TimedTest*
+
 
 void InitializeTests(TestEnvironment& env)
 {
@@ -73,8 +80,8 @@ void InitializeTests(TestEnvironment& env)
 		.AddTest(new UnitTest(11, "Test of sequence and initializer list equality assertions", TestInitializerAssert))
 		.AddTest(new UnitTest(12, "Test of sequence sorted assertions", TestSortedAssert))
 		//Slow and unstable
-		//.AddTest(new UnitTest(53, "Test of timer", TestTimer))
-		.AddTest(new TimedTest(53, "Basic timed test", TestTimedTest))
+		//.AddTest(new UnitTest(51, "Test of timer", TestTimer))
+		.AddTest(new TimedTest(52, "Basic timed test", TestTimedTest))
 
 		.AddTest(new UnitTest(101, "Test of array insertion", TestArrayInsertions))
 		.AddTest(new UnitTest(102, "Test of getting subsequence from array", TestArraySubsequence))
@@ -101,5 +108,8 @@ void InitializeTests(TestEnvironment& env)
 		.AddTest(new UnitTest(402, "Test of consecutive sequence generator", TestConsecutiveSequence))
 		.AddTest(new UnitTest(403, "Test of reverse sequence generator", TestReverseSequence))
 		.AddTest(new UnitTest(404, "Test of random sequence generator", TestRandomSequence))
+
 		;
+
+		
 }

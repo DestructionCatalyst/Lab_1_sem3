@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream>
+
 #include "Sequence.h"
 #include "ArraySequence.h"
 #include "ListSequence.h"
@@ -46,7 +48,7 @@ void AssertSequenceEquals(std::initializer_list<T> expected, Sequence<T>* actual
 
 //compare must return negative value if parameters are in wrong onder, non-negarive elsewhere
 template<class T>
-void AssertSequenceSorted(Sequence<T>* actual, std::function<int(T, T)> compare = DefaultCompare<T>)
+void AssertSequenceSorted(Sequence<T>* actual, std::function<int(T, T)> compare = defaultCompare<T>)
 {
 	SequenceIterator<T>* firstIter = actual->begin();
 	SequenceIterator<T>* nextIter = actual->begin();
@@ -54,6 +56,7 @@ void AssertSequenceSorted(Sequence<T>* actual, std::function<int(T, T)> compare 
 	++(*nextIter);
 
 	for (; (*nextIter) != (*actual->end()); ++(*firstIter), ++(*nextIter)) {
-		TestEnvironment::Assert(compare(**firstIter, **nextIter) > 0);
+		TestEnvironment::Assert(compare(**firstIter, **nextIter) >= 0);
+		//std::cout << (compare(**firstIter, **nextIter)) << std::endl;
 	}
 }

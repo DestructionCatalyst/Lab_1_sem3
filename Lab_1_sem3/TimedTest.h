@@ -3,16 +3,18 @@
 #include "UnitTest.h"
 #include "TimedTestCase.h"
 
+typedef function<void(Timer&)> timed_function;
+
 class TimedTest :
 	public UnitTest
 {
 public:
-	TimedTest(int id, string name, function<void(Timer&)> testFunction);
-	TimedTest(string name, function<void(Timer&)> testFunction);
+	TimedTest(int id, string name, timed_function testFunction);
+	TimedTest(string name, timed_function testFunction);
 protected:
-	string GenerateResultString(TestResult result) override;
-	void PrintResult(TestResult result) override;
-private:
+	virtual string GenerateResultString(TestResult result) override;
+	virtual void PrintResult(TestResult result) override;
+
 	int GetTestTime();
 };
 

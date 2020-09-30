@@ -28,6 +28,9 @@ namespace sequences {
 
 		virtual void Prepend(T item) = 0;
 		virtual void InsertAt(T item, int index) = 0;
+		
+		virtual void Set(T item, int index) = 0;
+
 		virtual Sequence<T>* Concat(Sequence<T>* list) = 0;
 
 		virtual Sequence<T>* Map(std::function<T(T)> f) const = 0;
@@ -39,6 +42,8 @@ namespace sequences {
 		virtual const_iterator* itemIterator(int index) const = 0;
 
 		virtual void Swap(int item1, int item2) = 0;
+
+		virtual void Print() const = 0;
 
 		virtual ~Sequence() {};
 	};

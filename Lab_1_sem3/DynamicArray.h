@@ -24,14 +24,14 @@ namespace sequences {
 		}
 
 		DynamicArray(T* items, int count):
-			DynamicArray(count)
+			DynamicArray(count + 8)
 		{
 			memcpy(elements, items, count * sizeof(T));
 		}
 
 		//WARNING shallow copy
 		DynamicArray(DynamicArray<T>& dynamicArray):
-			DynamicArray(dynamicArray.capacity)
+			DynamicArray(dynamicArray.capacity + 8)
 		{
 			memcpy(elements, dynamicArray.elements, capacity * sizeof(T));
 		}

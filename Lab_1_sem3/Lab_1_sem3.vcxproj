@@ -139,6 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ArraySequenceTests.cpp" />
+    <ClCompile Include="Average.cpp" />
     <ClCompile Include="ConsecutiveNumberGenerator.cpp" />
     <ClCompile Include="ConstantNumberGenerator.cpp" />
     <ClCompile Include="ListSequenceTests.cpp" />
@@ -147,6 +148,7 @@
     <ClCompile Include="RandomNumberGenerator.cpp" />
     <ClCompile Include="ReverseNumberGenerator.cpp" />
     <ClCompile Include="SequenceGeneratorTest.cpp" />
+    <ClCompile Include="SorterTest.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="TestCase.cpp" />
     <ClCompile Include="TestEnvironment.cpp" />
@@ -165,13 +167,16 @@
     <ClInclude Include="ConsecutiveNumberGenerator.h" />
     <ClInclude Include="ConstantNumberGenerator.h" />
     <ClInclude Include="DynamicArray.h" />
+    <ClInclude Include="Average.h" />
     <ClInclude Include="INumberGenerator.h" />
+    <ClInclude Include="ISorter.h" />
     <ClInclude Include="ItemGenerator.h" />
     <ClInclude Include="ITestCase.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="ListIterator.h" />
     <ClInclude Include="ListSequence.h" />
     <ClInclude Include="ListSequenceTests.h" />
+    <ClInclude Include="MergeSorter.h" />
     <ClInclude Include="MutableArrayIterator.h" />
     <ClInclude Include="MutableListIterator.h" />
     <ClInclude Include="MutableSequenceIterator.h" />
@@ -183,6 +188,7 @@
     <ClInclude Include="SequenceAssertions.h" />
     <ClInclude Include="SequenceGeneratorTest.h" />
     <ClInclude Include="SequenceIterator.h" />
+    <ClInclude Include="SorterTest.h" />
     <ClInclude Include="Test.h" />
     <ClInclude Include="TestCase.h" />
     <ClInclude Include="TestEnvironment.h" />

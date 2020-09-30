@@ -55,6 +55,9 @@
     <Filter Include="Test\TimedTest">
       <UniqueIdentifier>{d2941edc-fee4-48a2-aa4c-c786c5beb634}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sorter">
+      <UniqueIdentifier>{b25852b6-41b0-4e4a-bc01-745f130203b2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DynamicArray.h">
@@ -159,6 +162,18 @@
     <ClInclude Include="TimedTest.h">
       <Filter>Test\TimedTest</Filter>
     </ClInclude>
+    <ClInclude Include="SorterTest.h">
+      <Filter>Sorter</Filter>
+    </ClInclude>
+    <ClInclude Include="ISorter.h">
+      <Filter>Sorter</Filter>
+    </ClInclude>
+    <ClInclude Include="MergeSorter.h">
+      <Filter>Sorter</Filter>
+    </ClInclude>
+    <ClInclude Include="Average.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -211,6 +226,12 @@
     </ClCompile>
     <ClCompile Include="TimedTest.cpp">
       <Filter>Test\TimedTest</Filter>
+    </ClCompile>
+    <ClCompile Include="SorterTest.cpp">
+      <Filter>Sorter</Filter>
+    </ClCompile>
+    <ClCompile Include="Average.cpp">
+      <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

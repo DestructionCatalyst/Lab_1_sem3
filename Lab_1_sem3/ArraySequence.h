@@ -1,6 +1,7 @@
 #pragma once
 
 #include <functional>
+#include <iostream>
 
 #include "DynamicArray.h"
 #include "Sequence.h"
@@ -27,6 +28,12 @@ namespace sequences {
 			:Sequence<T>()
 		{
 			arr = new DynamicArray<T>(DEFAULT_SIZE);
+			curSize = 0;
+		}
+		ArraySequence(int size)
+			:Sequence<T>()
+		{
+			arr = new DynamicArray<T>(size + 8);
 			curSize = 0;
 		}
 		ArraySequence(T* items, int count)
@@ -129,7 +136,7 @@ namespace sequences {
 			else
 				throw std::out_of_range("Sequence index is out of bounds");
 		}
-		void Set(T item, int index)
+		void Set(T item, int index) override
 		{
 			arr->Set(item, index);
 		}
@@ -185,12 +192,24 @@ namespace sequences {
 			
 			return funcResult;
 		}
+			/*
 	public:
-		void swap(int firstIndex, int secondIndex)
+		void Swap(int firstIndex, int secondIndex) override
 		{
 			T temp = Get(firstIndex);
 			Set(Get(secondIndex), firstIndex);
 			Set(temp, secondIndex);
+		}
+		*/
+	public:
+		void Print() const override
+		{
+			const_iterator iter = dcast(begin());
+			for (; iter != dcast(end()); ++iter)
+			{
+				std::cout << *iter << " ";
+			}
+			std::cout << std::endl;
 		}
 	private:
 		const_iterator dcast(Sequence<T>::const_iterator* iter) const

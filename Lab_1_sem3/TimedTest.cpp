@@ -1,12 +1,13 @@
 #include "TimedTest.h"
 
 #include <iostream>
+#define ECHO_FOR_GRAPH
 
-TimedTest::TimedTest(int id, string name, function<void(Timer&)> testFunction) :
+TimedTest::TimedTest(int id, string name, timed_function testFunction) :
 	UnitTest(id, name, new TimedTestCase(testFunction))
 {}
 
-TimedTest::TimedTest(string name, function<void(Timer&)> testFunction) :
+TimedTest::TimedTest(string name, timed_function testFunction) :
 	UnitTest(rand(), name, new TimedTestCase(testFunction))
 {}
 
@@ -19,7 +20,10 @@ string TimedTest::GenerateResultString(TestResult result)
 
 void TimedTest::PrintResult(TestResult result)
 {
+	#ifndef ECHO_FOR_GRAPH
 	std::cout << GenerateResultString(result) << std::endl;
+	#endif // ECHO_FOR_GRAPH
+	
 }
 
 int TimedTest::GetTestTime()
