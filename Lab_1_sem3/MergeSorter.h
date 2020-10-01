@@ -25,9 +25,13 @@ public:
 		return seq;
 	}
 
-	int GetSequenceLength() override
+	int GetSequenceLength() const override
 	{
 		return seq->GetLength();
+	}
+	Sequence<T>* GetSequence() override
+	{
+		return seq;
 	}
 private:
 

@@ -12,30 +12,34 @@
 #include "ISorter.h"
 #include "SorterTest.h"
 
+#include "QuickSorter.h"
+
 using namespace std;
 using namespace sequences;
 
 
 
-void TestMergeSort()
+void TestMergeSort(INumberGenerator* gen)
 {
 	SorterTest::PerformanceTest(1000, 100,
-		[](int length) -> ISorter<int>*
+		[&](int length) -> ISorter<int>*
 		{
-			return new MergeSorter<int>(new ArraySequence<int>(new RandomNumberGenerator(length), length));
+			return new MergeSorter<int>(new ArraySequence<int>(gen, length));
 		}
 	);
 }
 
-void TestMergeSortOnInverse()
+void TestQuickSort(INumberGenerator* gen)
 {
 	SorterTest::PerformanceTest(1000, 100,
-		[](int length) -> ISorter<int>*
+		[&](int length) -> ISorter<int>*
 		{
-			return new MergeSorter<int>(new ArraySequence<int>(new ReverseNumberGenerator(length), length));
+			return new QuickSorter<int>(new ArraySequence<int>(gen, length));
 		}
 	);
 }
+
+
 
 int main() {
 
@@ -43,22 +47,16 @@ int main() {
 
 	InitializeTests(env);
 
-	TestMergeSort();
-
-	//TestMergeSortOnInverse();
-	
 	//env.RunAll();
 
-	//srand(420);
+	//TestMergeSort(new RandomNumberGenerator());
 
-	//for (int i = 0; i < 10; i++)
-		//cout << rand() << ", ";
+	//TestMergeSort(new ReverseNumberGenerator(100000));
 
-	//cout << endl;
-
-	//cout << rand() << " " << rand() << " " << rand() << endl;
+	TestQuickSort(new ReverseNumberGenerator(100000));
 	
-	//testArraySequence();
-	//testListSequence();
+	//TestQuickSort(new RandomNumberGenerator());
+
+
 }
 

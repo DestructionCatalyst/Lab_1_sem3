@@ -182,6 +182,7 @@
     <ClInclude Include="MutableSequenceIterator.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="NumberGeneratorTests.h" />
+    <ClInclude Include="QuickSorter.h" />
     <ClInclude Include="RandomNumberGenerator.h" />
     <ClInclude Include="ReverseNumberGenerator.h" />
     <ClInclude Include="Sequence.h" />

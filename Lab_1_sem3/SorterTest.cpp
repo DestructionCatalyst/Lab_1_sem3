@@ -2,15 +2,17 @@
 #include <iostream>
 #define ECHO_FOR_GRAPH
 
-SorterTest::SorterTest(int id, string name, ISorter<int>* _sorter) :
-	TimedTest(id, name, nullptr), sorter(_sorter)
+SorterTest::SorterTest(int id, string name, ISorter<int>* sorter) :
+	TimedTest(id, name, nullptr), sorter(sorter)
 {
 	testCase = new TimedTestCase(
 		[&](Timer& t) -> void
 		{
 			t.Start();
-			sorter->Sort();
+			this->sorter->Sort();
 			t.Pause();
+
+			AssertSequenceSorted(this->sorter->GetSequence());
 		}
 	);
 }
@@ -18,9 +20,9 @@ SorterTest::SorterTest(int id, string name, ISorter<int>* _sorter) :
 string SorterTest::GenerateResultString(TestResult result) 
 {
 	if (result == TEST_FAILURE)
-		return "Failed!";
+		return "Failed! ";
 	else if (result == TEST_CRASH)
-		return "Crashed!";
+		return "Crashed! ";
 
 	return (std::stringstream() << "(" << sorter->GetSequenceLength() << ";" << GetTestTime() << ") ").str();
 }
