@@ -41,11 +41,11 @@ private:
 		while (left <= right)
 		{
 			//Find item before the pivot and more than it
-			while (seq->Get(left) < pivot)
+			while (_compare(seq->Get(left), pivot) > 0)
 				++left;
 
 			//Find item after the pivot and less than it
-			while (seq->Get(right) > pivot)
+			while (_compare(seq->Get(right), pivot) < 0)
 				--right;
 
 			//Swap them

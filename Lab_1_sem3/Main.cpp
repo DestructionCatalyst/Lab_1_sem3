@@ -49,7 +49,9 @@ int main() {
 
 	std::string inputString;
 
-	TestMergeSort(new RandomNumberGenerator());
+	//TestMergeSort(new RandomNumberGenerator());
+
+	TestQuickSort(new RandomNumberGenerator());
 
 	while (1)
 	{
@@ -71,7 +73,7 @@ int main() {
 
 	//TestQuickSort(new ReverseNumberGenerator(100000));
 	
-	//TestQuickSort(new RandomNumberGenerator());
+	
 
 
 }
