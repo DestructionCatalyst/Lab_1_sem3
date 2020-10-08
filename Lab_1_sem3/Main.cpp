@@ -49,6 +49,8 @@ int main() {
 
 	std::string inputString;
 
+	TestMergeSort(new RandomNumberGenerator());
+
 	while (1)
 	{
 		getline(std::cin, inputString);
@@ -61,7 +63,7 @@ int main() {
 
 	//env.RunAll();
 
-	//TestMergeSort(new RandomNumberGenerator());
+	//
 
 	//TestMergeSort(new ReverseNumberGenerator(100000));
 

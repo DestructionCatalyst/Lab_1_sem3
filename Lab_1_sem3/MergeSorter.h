@@ -12,10 +12,14 @@ class MergeSorter: public ISorter<T>
 private:
 	Sequence<T>* seq;
 	ISorter<T>::comparator_t _compare;
+
+	Sequence<T>* merged;
 public:
 	MergeSorter(Sequence<T>* toSort, ISorter<T>::comparator_t compare = defaultCompare<T>):
 		seq(toSort), _compare(compare)
-	{}
+	{
+		merged = new ArraySequence<T>(toSort->GetLength());
+	}
 
 	Sequence<T>* Sort() override
 	{
@@ -39,6 +43,8 @@ private:
 	{
 		if (start < end)
 		{
+
+
 			SortSubsequence(start, average(start, end));
 			SortSubsequence(average(start, end) + 1, end);
 
@@ -48,7 +54,6 @@ private:
 
 	void Merge(int start, int end)
 	{
-		Sequence<T>* merged = new ArraySequence<T>(end - start);
 
 		int middle = average(start, end);
 		int firstIndex = start;
@@ -81,7 +86,7 @@ private:
 			seq->Set(merged->Get(i - start), i);
 		}
 			
-		
+		dynamic_cast<ArraySequence<T>*>(merged)->Clear();
 	}
 
 	~MergeSorter() override

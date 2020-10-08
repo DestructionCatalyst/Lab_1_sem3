@@ -192,6 +192,11 @@ namespace sequences {
 			
 			return funcResult;
 		}
+	public:
+		void Clear()
+		{
+			curSize = 0;
+		}
 			/*
 	public:
 		void Swap(int firstIndex, int secondIndex) override
