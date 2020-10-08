@@ -41,22 +41,29 @@ void TestQuickSort(INumberGenerator* gen)
 	);
 }
 
+void InitCommandParser(ui::CommandParser& par)
+{
+	par.AddCommand(new ui::ExitCommand, {ui::ExitCommand::name, ui::ExitCommand::alias});
+}
+
 
 
 int main() {
 
 	ui::CommandParser parser{};
 
+	InitCommandParser(parser);
+
 	std::string inputString;
 
 	//TestMergeSort(new RandomNumberGenerator());
 
-	TestQuickSort(new RandomNumberGenerator());
+	//TestQuickSort(new RandomNumberGenerator());
 
 	while (1)
 	{
 		getline(std::cin, inputString);
-		parser.parse(inputString);
+		parser.Parse(inputString);
 	}
 
 	//TestEnvironment env{};

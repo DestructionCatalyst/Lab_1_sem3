@@ -22,7 +22,9 @@ namespace ui {
 
 		CommandParser();
 
-		void parse(string command);
+		void AddCommand(Command* cmd, std::initializer_list<std::string> names);
+
+		void Parse(string command);
 
 	private:
 

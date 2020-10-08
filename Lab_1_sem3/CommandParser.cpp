@@ -7,11 +7,21 @@ namespace ui {
 	CommandParser::CommandParser()
 	{
 
-		commands[ExitCommand::name] = new ExitCommand();
-		commands[ExitCommand::alias] = new ExitCommand();
+		//commands[ExitCommand::name] = new ExitCommand();
+		//commands[ExitCommand::alias] = new ExitCommand();
 	}
 
-	void CommandParser::parse(string command)
+	void CommandParser::AddCommand(Command* cmd, std::initializer_list<std::string> names)
+	{
+		auto iter = names.begin();
+
+		for (; iter != names.end(); ++iter)
+		{
+			commands[*iter] = cmd;
+		}
+	}
+
+	void CommandParser::Parse(string command)
 	{
 		auto firstSpace = command.find_first_of(" ");
 		
