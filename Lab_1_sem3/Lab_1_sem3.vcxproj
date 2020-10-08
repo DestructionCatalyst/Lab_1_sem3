@@ -140,8 +140,11 @@
   <ItemGroup>
     <ClCompile Include="ArraySequenceTests.cpp" />
     <ClCompile Include="Average.cpp" />
+    <ClCompile Include="Command.h" />
+    <ClCompile Include="CommandParser.cpp" />
     <ClCompile Include="ConsecutiveNumberGenerator.cpp" />
     <ClCompile Include="ConstantNumberGenerator.cpp" />
+    <ClCompile Include="ExitCommand.cpp" />
     <ClCompile Include="ListSequenceTests.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="NumberGeneratorTests.cpp" />
@@ -163,11 +166,14 @@
     <ClInclude Include="ArraySequence.h" />
     <ClInclude Include="ArraySequenceTests.h" />
     <ClInclude Include="AssertionException.h" />
+    <ClInclude Include="CommandArgument.h" />
+    <ClInclude Include="CommandParser.h" />
     <ClInclude Include="Comparators.h" />
     <ClInclude Include="ConsecutiveNumberGenerator.h" />
     <ClInclude Include="ConstantNumberGenerator.h" />
     <ClInclude Include="DynamicArray.h" />
     <ClInclude Include="Average.h" />
+    <ClInclude Include="ExitCommand.h" />
     <ClInclude Include="INumberGenerator.h" />
     <ClInclude Include="ISorter.h" />
     <ClInclude Include="ItemGenerator.h" />

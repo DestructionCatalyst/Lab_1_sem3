@@ -14,6 +14,8 @@
 
 #include "QuickSorter.h"
 
+#include "CommandParser.h"
+
 using namespace std;
 using namespace sequences;
 
@@ -43,9 +45,19 @@ void TestQuickSort(INumberGenerator* gen)
 
 int main() {
 
-	TestEnvironment env{};
+	ui::CommandParser parser{};
 
-	InitializeTests(env);
+	std::string inputString;
+
+	while (1)
+	{
+		getline(std::cin, inputString);
+		parser.parse(inputString);
+	}
+
+	//TestEnvironment env{};
+
+	//InitializeTests(env);
 
 	//env.RunAll();
 
@@ -53,7 +65,9 @@ int main() {
 
 	//TestMergeSort(new ReverseNumberGenerator(100000));
 
-	TestQuickSort(new ReverseNumberGenerator(100000));
+
+
+	//TestQuickSort(new ReverseNumberGenerator(100000));
 	
 	//TestQuickSort(new RandomNumberGenerator());
 

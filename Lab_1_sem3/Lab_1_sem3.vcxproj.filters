@@ -58,6 +58,12 @@
     <Filter Include="Sorter">
       <UniqueIdentifier>{b25852b6-41b0-4e4a-bc01-745f130203b2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{65006d85-e37b-4b25-ab41-c0ee4d402357}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Exit">
+      <UniqueIdentifier>{027662c7-5a6b-4b34-a9fc-866d9617cbb8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DynamicArray.h">
@@ -177,6 +183,15 @@
     <ClInclude Include="QuickSorter.h">
       <Filter>Sorter</Filter>
     </ClInclude>
+    <ClInclude Include="CommandArgument.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ExitCommand.h">
+      <Filter>UI\Exit</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandParser.h">
+      <Filter>UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -235,6 +250,15 @@
     </ClCompile>
     <ClCompile Include="Average.cpp">
       <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Command.h">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ExitCommand.cpp">
+      <Filter>UI\Exit</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandParser.cpp">
+      <Filter>UI</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
