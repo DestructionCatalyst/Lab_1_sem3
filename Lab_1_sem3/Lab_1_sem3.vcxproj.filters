@@ -64,6 +64,9 @@
     <Filter Include="UI\Exit">
       <UniqueIdentifier>{027662c7-5a6b-4b34-a9fc-866d9617cbb8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="UI\Create">
+      <UniqueIdentifier>{565b9e67-36af-44aa-82d9-f594243ed4aa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DynamicArray.h">
@@ -192,6 +195,15 @@
     <ClInclude Include="CommandParser.h">
       <Filter>UI</Filter>
     </ClInclude>
+    <ClInclude Include="CreateCommand.h">
+      <Filter>UI\Create</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratorArgument.h">
+      <Filter>UI\Create</Filter>
+    </ClInclude>
+    <ClInclude Include="ParseFunctions.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -259,6 +271,15 @@
     </ClCompile>
     <ClCompile Include="CommandParser.cpp">
       <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateCommand.cpp">
+      <Filter>UI\Create</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratorArgument.cpp">
+      <Filter>UI\Create</Filter>
+    </ClCompile>
+    <ClCompile Include="ParseFunctions.cpp">
+      <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

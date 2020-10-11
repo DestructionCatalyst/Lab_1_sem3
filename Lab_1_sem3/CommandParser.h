@@ -4,8 +4,8 @@
 #include <utility>
 
 #include "Command.h"
+#include "ParseFunctions.h"
 
-#include "ExitCommand.h"
 
 using std::map;
 using std::string;
@@ -29,6 +29,7 @@ namespace ui {
 	private:
 
 		virtual void CommandNotFound(string command);
+		virtual void CommandError(std::exception ex);
 	};
 
 }

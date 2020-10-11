@@ -23,20 +23,21 @@ namespace ui {
 
 	void CommandParser::Parse(string command)
 	{
-		auto firstSpace = command.find_first_of(" ");
 		
-		string cmd = command.substr(0, firstSpace);
-
-		string args = "";
-
-		//std::cout << command << " " << firstSpace << " " << args << std::endl;
-
-
-		if (firstSpace != string::npos)
-			args = command.substr(firstSpace + 1);
+		string cmd = getFirstWord(command);
 
 		if (commands.find(cmd) != commands.end())
-			commands[cmd]->Execute(args);
+		{
+			try
+			{
+				commands[cmd]->Execute(command);
+			}
+			catch (std::invalid_argument e)
+			{
+				CommandError(e);
+			}
+			
+		}	
 		else
 			CommandNotFound(cmd);
 
@@ -46,4 +47,10 @@ namespace ui {
 	{
 		std::cout << "Command " << str << " not found! To see the list of commands, type help" << std::endl;
 	}
+
+	void CommandParser::CommandError(std::exception ex)
+	{
+		std::cout << "Error executing command: " << ex.what() << std::endl;
+	}
+
 }

@@ -16,6 +16,9 @@
 
 #include "CommandParser.h"
 
+#include "ExitCommand.h"
+#include "CreateCommand.h"
+
 using namespace std;
 using namespace sequences;
 
@@ -41,9 +44,10 @@ void TestQuickSort(INumberGenerator* gen)
 	);
 }
 
-void InitCommandParser(ui::CommandParser& par)
+void InitCommandParser(ui::CommandParser& par, vector<Sequence<int>*>* vec)
 {
-	par.AddCommand(new ui::ExitCommand, {ui::ExitCommand::name, ui::ExitCommand::alias});
+	par.AddCommand(new ui::ExitCommand, { ui::ExitCommand::name, ui::ExitCommand::alias });
+	par.AddCommand(new ui::CreateCommand(vec), { ui::CreateCommand::name, ui::CreateCommand::alias });
 }
 
 
@@ -52,7 +56,9 @@ int main() {
 
 	ui::CommandParser parser{};
 
-	InitCommandParser(parser);
+	vector<Sequence<int>*> vec{};
+
+	InitCommandParser(parser, &vec);
 
 	std::string inputString;
 
@@ -64,6 +70,8 @@ int main() {
 	{
 		getline(std::cin, inputString);
 		parser.Parse(inputString);
+
+		//(vec[vec.size() - 1])->Print();
 	}
 
 	//TestEnvironment env{};

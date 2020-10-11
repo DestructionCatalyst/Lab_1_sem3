@@ -144,10 +144,13 @@
     <ClCompile Include="CommandParser.cpp" />
     <ClCompile Include="ConsecutiveNumberGenerator.cpp" />
     <ClCompile Include="ConstantNumberGenerator.cpp" />
+    <ClCompile Include="CreateCommand.cpp" />
     <ClCompile Include="ExitCommand.cpp" />
+    <ClCompile Include="GeneratorArgument.cpp" />
     <ClCompile Include="ListSequenceTests.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="NumberGeneratorTests.cpp" />
+    <ClCompile Include="ParseFunctions.cpp" />
     <ClCompile Include="RandomNumberGenerator.cpp" />
     <ClCompile Include="ReverseNumberGenerator.cpp" />
     <ClCompile Include="SequenceGeneratorTest.cpp" />
@@ -171,9 +174,11 @@
     <ClInclude Include="Comparators.h" />
     <ClInclude Include="ConsecutiveNumberGenerator.h" />
     <ClInclude Include="ConstantNumberGenerator.h" />
+    <ClInclude Include="CreateCommand.h" />
     <ClInclude Include="DynamicArray.h" />
     <ClInclude Include="Average.h" />
     <ClInclude Include="ExitCommand.h" />
+    <ClInclude Include="GeneratorArgument.h" />
     <ClInclude Include="INumberGenerator.h" />
     <ClInclude Include="ISorter.h" />
     <ClInclude Include="ItemGenerator.h" />
@@ -188,6 +193,7 @@
     <ClInclude Include="MutableSequenceIterator.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="NumberGeneratorTests.h" />
+    <ClInclude Include="ParseFunctions.h" />
     <ClInclude Include="QuickSorter.h" />
     <ClInclude Include="RandomNumberGenerator.h" />
     <ClInclude Include="ReverseNumberGenerator.h" />

@@ -5,7 +5,7 @@
 namespace ui {
 	void ExitCommand::Execute(string args)
 	{
-		//std::cout << args << std::endl;
+		std::cout << args << std::endl;
 		exit(0);
 	}
 }
