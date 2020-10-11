@@ -67,6 +67,9 @@
     <Filter Include="UI\Create">
       <UniqueIdentifier>{565b9e67-36af-44aa-82d9-f594243ed4aa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="UI\Print">
+      <UniqueIdentifier>{eab5d313-a19d-443c-98c2-2223a970e7f0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DynamicArray.h">
@@ -204,6 +207,9 @@
     <ClInclude Include="ParseFunctions.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="PrintCommand.h">
+      <Filter>UI\Print</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -280,6 +286,9 @@
     </ClCompile>
     <ClCompile Include="ParseFunctions.cpp">
       <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="PrintCommand.cpp">
+      <Filter>UI\Print</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -18,6 +18,7 @@
 
 #include "ExitCommand.h"
 #include "CreateCommand.h"
+#include "PrintCommand.h"
 
 using namespace std;
 using namespace sequences;
@@ -48,6 +49,7 @@ void InitCommandParser(ui::CommandParser& par, vector<Sequence<int>*>* vec)
 {
 	par.AddCommand(new ui::ExitCommand, { ui::ExitCommand::name, ui::ExitCommand::alias });
 	par.AddCommand(new ui::CreateCommand(vec), { ui::CreateCommand::name, ui::CreateCommand::alias });
+	par.AddCommand(new ui::PrintCommand(vec), { ui::PrintCommand::name });
 }
 
 
