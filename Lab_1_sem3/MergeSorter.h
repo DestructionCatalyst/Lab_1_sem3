@@ -2,6 +2,7 @@
 
 #include <functional>
 
+#include "ArraySequence.h"
 #include "ISorter.h"
 #include "Comparators.h"
 #include "Average.h"

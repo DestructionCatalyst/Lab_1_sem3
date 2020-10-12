@@ -19,6 +19,9 @@
 #include "ExitCommand.h"
 #include "CreateCommand.h"
 #include "PrintCommand.h"
+#include "DeleteCommand.h"
+#include "SortCommand.h"
+#include "TestCommand.h"
 
 using namespace std;
 using namespace sequences;
@@ -50,6 +53,9 @@ void InitCommandParser(ui::CommandParser& par, vector<Sequence<int>*>* vec)
 	par.AddCommand(new ui::ExitCommand, { ui::ExitCommand::name, ui::ExitCommand::alias });
 	par.AddCommand(new ui::CreateCommand(vec), { ui::CreateCommand::name, ui::CreateCommand::alias });
 	par.AddCommand(new ui::PrintCommand(vec), { ui::PrintCommand::name });
+	par.AddCommand(new ui::DeleteCommand(vec), { ui::DeleteCommand::name, ui::DeleteCommand::alias });
+	par.AddCommand(new ui::SortCommand(vec), { ui::SortCommand::name });
+	par.AddCommand(new ui::TestCommand(vec), { ui::TestCommand::name });
 }
 
 

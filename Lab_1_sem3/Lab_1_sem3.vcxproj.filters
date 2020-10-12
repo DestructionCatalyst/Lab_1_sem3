@@ -70,6 +70,15 @@
     <Filter Include="UI\Print">
       <UniqueIdentifier>{eab5d313-a19d-443c-98c2-2223a970e7f0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="UI\Delete">
+      <UniqueIdentifier>{c8cecd6f-0790-4f52-ae82-ac707d7178c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Sort">
+      <UniqueIdentifier>{1742f271-9913-4830-9c05-b502466286b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Test">
+      <UniqueIdentifier>{6cbae88b-91ce-4a27-92b5-8311fdc1310c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DynamicArray.h">
@@ -210,6 +219,18 @@
     <ClInclude Include="PrintCommand.h">
       <Filter>UI\Print</Filter>
     </ClInclude>
+    <ClInclude Include="DeleteCommand.h">
+      <Filter>UI\Delete</Filter>
+    </ClInclude>
+    <ClInclude Include="SortCommand.h">
+      <Filter>UI\Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="SorterArgument.h">
+      <Filter>UI\Sort</Filter>
+    </ClInclude>
+    <ClInclude Include="TestCommand.h">
+      <Filter>UI\Test</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -266,9 +287,6 @@
     <ClCompile Include="SorterTest.cpp">
       <Filter>Sorter</Filter>
     </ClCompile>
-    <ClCompile Include="Average.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Command.h">
       <Filter>UI</Filter>
     </ClCompile>
@@ -289,6 +307,21 @@
     </ClCompile>
     <ClCompile Include="PrintCommand.cpp">
       <Filter>UI\Print</Filter>
+    </ClCompile>
+    <ClCompile Include="DeleteCommand.cpp">
+      <Filter>UI\Delete</Filter>
+    </ClCompile>
+    <ClCompile Include="SortCommand.cpp">
+      <Filter>UI\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="SorterArgument.cpp">
+      <Filter>UI\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="Average.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="TestCommand.cpp">
+      <Filter>UI\Test</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
