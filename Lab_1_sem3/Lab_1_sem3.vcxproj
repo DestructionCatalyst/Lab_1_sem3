@@ -156,6 +156,7 @@
     <ClCompile Include="RandomNumberGenerator.cpp" />
     <ClCompile Include="ReverseNumberGenerator.cpp" />
     <ClCompile Include="SequenceGeneratorTest.cpp" />
+    <ClCompile Include="ShellPartition.cpp" />
     <ClCompile Include="SortCommand.cpp" />
     <ClCompile Include="SorterArgument.cpp" />
     <ClCompile Include="SorterTest.cpp" />
@@ -186,6 +187,7 @@
     <ClInclude Include="ExitCommand.h" />
     <ClInclude Include="GeneratorArgument.h" />
     <ClInclude Include="INumberGenerator.h" />
+    <ClInclude Include="IPartition.h" />
     <ClInclude Include="ISorter.h" />
     <ClInclude Include="ItemGenerator.h" />
     <ClInclude Include="ITestCase.h" />
@@ -208,6 +210,7 @@
     <ClInclude Include="SequenceAssertions.h" />
     <ClInclude Include="SequenceGeneratorTest.h" />
     <ClInclude Include="SequenceIterator.h" />
+    <ClInclude Include="ShellPartition.h" />
     <ClInclude Include="ShellSorter.h" />
     <ClInclude Include="SortCommand.h" />
     <ClInclude Include="SorterArgument.h" />

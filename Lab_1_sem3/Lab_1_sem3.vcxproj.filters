@@ -79,6 +79,9 @@
     <Filter Include="UI\Test">
       <UniqueIdentifier>{6cbae88b-91ce-4a27-92b5-8311fdc1310c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sorter\ShellSorter">
+      <UniqueIdentifier>{30cc248f-3eb8-4a9a-a4a4-04790227832b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DynamicArray.h">
@@ -232,7 +235,13 @@
       <Filter>UI\Test</Filter>
     </ClInclude>
     <ClInclude Include="ShellSorter.h">
-      <Filter>Sorter</Filter>
+      <Filter>Sorter\ShellSorter</Filter>
+    </ClInclude>
+    <ClInclude Include="IPartition.h">
+      <Filter>Sorter\ShellSorter</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellPartition.h">
+      <Filter>Sorter\ShellSorter</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -325,6 +334,9 @@
     </ClCompile>
     <ClCompile Include="TestCommand.cpp">
       <Filter>UI\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellPartition.cpp">
+      <Filter>Sorter\ShellSorter</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
