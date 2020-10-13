@@ -8,7 +8,7 @@ namespace ui {
 		else if (sorter == "quick")
 			iSorter = new QuickSorter<int>(toSort);
 		else if (sorter == "shell")
-			;//TODO
+			iSorter = new ShellSorter<int>(toSort);
 		else
 			throw std::invalid_argument(sorter + " is not a valid sorter argument!");
 	}

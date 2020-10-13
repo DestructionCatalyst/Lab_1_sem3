@@ -231,6 +231,9 @@
     <ClInclude Include="TestCommand.h">
       <Filter>UI\Test</Filter>
     </ClInclude>
+    <ClInclude Include="ShellSorter.h">
+      <Filter>Sorter</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">

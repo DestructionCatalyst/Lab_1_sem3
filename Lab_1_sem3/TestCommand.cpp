@@ -11,9 +11,9 @@ namespace ui {
 		int step = atoi(getFirstWord(args).c_str());
 
 		if (iterations <= 0)
-			throw new std::invalid_argument("Invalid iterations number");
+			throw std::invalid_argument("Invalid iterations number");
 		if (step <= 0)
-			throw new std::invalid_argument("Invalid step number");
+			throw std::invalid_argument("Invalid step number");
 
 		if (testArg == "sequence")
 		{
@@ -25,15 +25,17 @@ namespace ui {
 		}
 		else
 		{
-			SorterTest::PerformanceTest(step, iterations,
+			SorterTest::PerformanceTest(step, iterations + 1,
 				[&](int length) -> ISorter<int>*
 				{
-					return new MergeSorter<int>(
-						GeneratorArgument(generatorArg, length, false).GenerateSequence()
-						);
+					return SorterArgument(
+						GeneratorArgument(generatorArg, length, false).GenerateSequence(),
+						testArg
+						).GetSorter();
 				}
 			);
-			//SorterArgument(new ArraySequence())
+			
+			std::cout << std::endl;
 		}
 	}
 }

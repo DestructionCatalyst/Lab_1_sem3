@@ -16,3 +16,8 @@ int median3(int a, int b, int c)
 
 	return b;
 }
+
+int nextStepHalf(int prevStep)
+{
+	return prevStep / 2;
+}

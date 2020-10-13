@@ -6,6 +6,7 @@
 #include "Sequence.h"
 #include "MergeSorter.h"
 #include "QuickSorter.h"
+#include "ShellSorter.h"
 
 #include "CommandArgument.h"
 
