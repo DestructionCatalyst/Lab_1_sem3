@@ -243,6 +243,9 @@
     <ClInclude Include="ShellPartition.h">
       <Filter>Sorter\ShellSorter</Filter>
     </ClInclude>
+    <ClInclude Include="HibbardPartition.h">
+      <Filter>Sorter\ShellSorter</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -336,6 +339,9 @@
       <Filter>UI\Test</Filter>
     </ClCompile>
     <ClCompile Include="ShellPartition.cpp">
+      <Filter>Sorter\ShellSorter</Filter>
+    </ClCompile>
+    <ClCompile Include="HibbardPartition.cpp">
       <Filter>Sorter\ShellSorter</Filter>
     </ClCompile>
   </ItemGroup>

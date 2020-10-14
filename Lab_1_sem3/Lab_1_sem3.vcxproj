@@ -148,6 +148,7 @@
     <ClCompile Include="DeleteCommand.cpp" />
     <ClCompile Include="ExitCommand.cpp" />
     <ClCompile Include="GeneratorArgument.cpp" />
+    <ClCompile Include="HibbardPartition.cpp" />
     <ClCompile Include="ListSequenceTests.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="NumberGeneratorTests.cpp" />
@@ -186,6 +187,7 @@
     <ClInclude Include="Average.h" />
     <ClInclude Include="ExitCommand.h" />
     <ClInclude Include="GeneratorArgument.h" />
+    <ClInclude Include="HibbardPartition.h" />
     <ClInclude Include="INumberGenerator.h" />
     <ClInclude Include="IPartition.h" />
     <ClInclude Include="ISorter.h" />

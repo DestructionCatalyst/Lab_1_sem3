@@ -13,20 +13,17 @@ template<class T>
 class ShellSorter : public ISorter<T>
 {
 private:
-	typedef std::function<int(int)> next_step_t;
 
 	Sequence<T>* seq;
 	ISorter<T>::comparator_t compare;
-	next_step_t nextStep;
 
 	IPartition* steps;
 	
 public:
 	ShellSorter(Sequence<T>* toSort,
-		next_step_t nextStepSize = nextStepHalf,
 		IPartition* step = new ShellPartition(),
 		ISorter<T>::comparator_t compare = defaultCompare<T>) :
-		seq(toSort), compare(compare), steps(step), nextStep(nextStepSize)
+		seq(toSort), compare(compare), steps(step)
 	{}
 
 	Sequence<T>* Sort() override

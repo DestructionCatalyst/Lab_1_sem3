@@ -4,5 +4,5 @@
 
 using std::string;
 
-string getFirstWord(string& str);
+string getFirstWord(string& str, string separators = " ");
 
